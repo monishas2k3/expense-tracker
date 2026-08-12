@@ -1,6 +1,6 @@
 /* ==================================================
    EXPENSE TRACKER
-   Responsive CSS
+   Responsive CSS + Dark Mode
 ================================================== */
 
 
@@ -55,12 +55,16 @@ body {
     background: var(--background);
     color: var(--text);
     min-height: 100vh;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 
 /* ================= HEADER ================= */
 
 .header {
+
     background:
         linear-gradient(
             135deg,
@@ -79,54 +83,123 @@ body {
 
 
 .header-content {
+
     max-width: 1200px;
+
     margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
 }
 
 
 .brand {
+
     display: flex;
+
     align-items: center;
+
     gap: 14px;
 }
 
 
 .brand-icon {
+
     width: 48px;
     height: 48px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    background: rgba(255, 255, 255, 0.18);
+    background:
+        rgba(255, 255, 255, 0.18);
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
 
     border-radius: 14px;
 
     font-size: 25px;
+
     font-weight: 800;
 }
 
 
 .brand h1 {
+
     font-size: 22px;
+
     font-weight: 800;
 }
 
 
 .brand p {
+
     font-size: 13px;
+
     opacity: 0.85;
+
     margin-top: 3px;
+}
+
+
+/* ================= THEME TOGGLE ================= */
+
+.theme-toggle {
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.theme-toggle:hover {
+
+    background:
+        rgba(255, 255, 255, 0.28);
+
+    transform:
+        rotate(15deg) scale(1.05);
 }
 
 
 /* ================= CONTAINER ================= */
 
 .container {
+
     width: min(1200px, 92%);
+
     margin: auto;
 }
 
@@ -134,19 +207,25 @@ body {
 /* ================= WELCOME ================= */
 
 .welcome-section {
-    padding: 45px 0 30px;
+
+    padding:
+        45px 0 30px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 
 .welcome-label,
 .small-title {
+
     display: inline-block;
 
     font-size: 11px;
+
     font-weight: 800;
 
     letter-spacing: 1.5px;
@@ -156,9 +235,11 @@ body {
 
 
 .welcome-section h2 {
+
     color: var(--dark);
 
-    font-size: clamp(28px, 4vw, 42px);
+    font-size:
+        clamp(28px, 4vw, 42px);
 
     line-height: 1.15;
 
@@ -167,11 +248,13 @@ body {
 
 
 .welcome-section h2 span {
+
     color: var(--primary);
 }
 
 
 .welcome-section p {
+
     margin-top: 10px;
 
     color: var(--muted);
@@ -211,20 +294,25 @@ body {
 
     box-shadow: var(--shadow);
 
-    border: 1px solid rgba(229, 231, 235, 0.8);
+    border:
+        1px solid rgba(229, 231, 235, 0.8);
 
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
 .summary-card:hover {
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
     box-shadow:
-        0 18px 35px rgba(15, 23, 42, 0.12);
+        0 18px 35px
+        rgba(15, 23, 42, 0.12);
 }
 
 
@@ -249,16 +337,19 @@ body {
 
 
 .balance-card {
+
     color: var(--primary);
 }
 
 
 .income-card {
+
     color: var(--income);
 }
 
 
 .expense-card {
+
     color: var(--expense);
 }
 
@@ -288,24 +379,31 @@ body {
     justify-content: center;
 
     font-size: 20px;
+
     font-weight: 800;
 }
 
 
 .balance-card .card-icon {
+
     background: var(--primary-light);
+
     color: var(--primary);
 }
 
 
 .income-card .card-icon {
+
     background: var(--income-light);
+
     color: var(--income);
 }
 
 
 .expense-card .card-icon {
+
     background: var(--expense-light);
+
     color: var(--expense);
 }
 
@@ -368,9 +466,15 @@ body {
 
     box-shadow: var(--shadow);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     padding: 25px;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
@@ -417,6 +521,7 @@ body {
     color: var(--primary);
 
     font-size: 25px;
+
     font-weight: 500;
 }
 
@@ -451,7 +556,8 @@ select {
 
     height: 48px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     border-radius: 11px;
 
@@ -470,19 +576,23 @@ select {
     transition:
         border 0.2s ease,
         box-shadow 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 
 input:focus,
 select:focus {
 
-    border-color: var(--primary);
+    border-color:
+        var(--primary);
 
-    background: var(--white);
+    background:
+        var(--white);
 
     box-shadow:
-        0 0 0 3px rgba(79, 70, 229, 0.1);
+        0 0 0 3px
+        rgba(79, 70, 229, 0.1);
 }
 
 
@@ -508,7 +618,8 @@ input::placeholder {
 
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: var(--muted);
 
@@ -530,7 +641,8 @@ input::placeholder {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 10px;
 }
@@ -542,9 +654,12 @@ input::placeholder {
 
     border-radius: 10px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     background: #fafafa;
+
+    color: var(--text);
 
     cursor: pointer;
 
@@ -554,7 +669,8 @@ input::placeholder {
 
     font-size: 13px;
 
-    transition: all 0.2s ease;
+    transition:
+        all 0.2s ease;
 }
 
 
@@ -566,27 +682,48 @@ input::placeholder {
 
 .type-btn:hover {
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
+
+/* Light mode - selected Income */
 
 .income-type.active {
 
     color: var(--income);
 
-    background: var(--income-light);
+    background:
+        var(--income-light);
 
-    border-color: #a7f3d0;
+    border:
+        2px solid var(--income);
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(16, 185, 129, 0.08);
 }
 
+
+/* Light mode - selected Expense */
 
 .expense-type.active {
 
     color: var(--expense);
 
-    background: var(--expense-light);
+    background:
+        var(--expense-light);
 
-    border-color: #fecaca;
+    border:
+        2px solid var(--expense);
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(239, 68, 68, 0.08);
 }
 
 
@@ -632,7 +769,8 @@ input::placeholder {
     cursor: pointer;
 
     box-shadow:
-        0 6px 15px rgba(79, 70, 229, 0.25);
+        0 6px 15px
+        rgba(79, 70, 229, 0.25);
 
     transition:
         transform 0.2s ease,
@@ -642,10 +780,12 @@ input::placeholder {
 
 .primary-btn:hover {
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 9px 20px rgba(79, 70, 229, 0.35);
+        0 9px 20px
+        rgba(79, 70, 229, 0.35);
 }
 
 
@@ -663,11 +803,12 @@ input::placeholder {
 
     height: 43px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     border-radius: 10px;
 
-    background: white;
+    background: var(--white);
 
     color: var(--muted);
 
@@ -703,7 +844,8 @@ input::placeholder {
 
     border: none;
 
-    background: var(--expense-light);
+    background:
+        var(--expense-light);
 
     color: var(--expense);
 
@@ -727,7 +869,8 @@ input::placeholder {
 
     background: #fee2e2;
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 
@@ -737,7 +880,8 @@ input::placeholder {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 12px;
 
@@ -745,7 +889,8 @@ input::placeholder {
 
     padding-bottom: 20px;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 }
 
 
@@ -784,24 +929,29 @@ input::placeholder {
 
     padding: 15px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     border-radius: 13px;
 
-    background: #fff;
+    background: var(--white);
 
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
 .transaction-item:hover {
 
-    transform: translateX(3px);
+    transform:
+        translateX(3px);
 
     box-shadow:
-        0 5px 15px rgba(15, 23, 42, 0.06);
+        0 5px 15px
+        rgba(15, 23, 42, 0.06);
 }
 
 
@@ -827,7 +977,8 @@ input::placeholder {
 
     color: var(--income);
 
-    background: var(--income-light);
+    background:
+        var(--income-light);
 }
 
 
@@ -835,7 +986,8 @@ input::placeholder {
 
     color: var(--expense);
 
-    background: var(--expense-light);
+    background:
+        var(--expense-light);
 }
 
 
@@ -883,7 +1035,8 @@ input::placeholder {
 
     border-radius: 6px;
 
-    background: var(--primary-light);
+    background:
+        var(--primary-light);
 
     color: var(--primary);
 
@@ -959,7 +1112,8 @@ input::placeholder {
 
 .edit-btn {
 
-    background: var(--primary-light);
+    background:
+        var(--primary-light);
 
     color: var(--primary);
 }
@@ -967,7 +1121,8 @@ input::placeholder {
 
 .delete-btn {
 
-    background: var(--expense-light);
+    background:
+        var(--expense-light);
 
     color: var(--expense);
 }
@@ -975,7 +1130,8 @@ input::placeholder {
 
 .action-btn:hover {
 
-    transform: scale(1.08);
+    transform:
+        scale(1.08);
 }
 
 
@@ -1003,7 +1159,8 @@ input::placeholder {
 
     border-radius: 18px;
 
-    background: var(--primary-light);
+    background:
+        var(--primary-light);
 
     color: var(--primary);
 
@@ -1025,7 +1182,8 @@ input::placeholder {
 
 .empty-state p {
 
-    margin: 7px auto 0;
+    margin:
+        7px auto 0;
 
     max-width: 300px;
 
@@ -1045,11 +1203,13 @@ input::placeholder {
 
     width: 92%;
 
-    margin: 40px auto 20px;
+    margin:
+        40px auto 20px;
 
     padding-top: 20px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 
     display: flex;
 
@@ -1085,16 +1245,327 @@ input::placeholder {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* ==================================================
+   DARK MODE
+================================================== */
 
-/* Tablet */
+body.dark-mode {
+
+    --dark: #f8fafc;
+
+    --text: #d1d5db;
+
+    --muted: #9ca3af;
+
+    --white: #1e293b;
+
+    --background: #0f172a;
+
+    --border: #334155;
+
+    --primary-light: #252b5c;
+
+    --income-light: #063b2b;
+
+    --expense-light: #451a1a;
+
+    --shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* Dark body */
+
+body.dark-mode {
+
+    background: #0f172a;
+
+    color: #d1d5db;
+}
+
+
+/* Dark header */
+
+body.dark-mode .header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1e1b4b,
+            #312e81,
+            #3730a3
+        );
+}
+
+
+/* Dark cards */
+
+body.dark-mode .form-card,
+body.dark-mode .history-card,
+body.dark-mode .summary-card {
+
+    background: #1e293b;
+
+    border-color: #334155;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* Dark headings */
+
+body.dark-mode .welcome-section h2,
+body.dark-mode .section-heading h2,
+body.dark-mode .history-header h2 {
+
+    color: #f8fafc;
+}
+
+
+/* Dark summary amounts */
+
+body.dark-mode .summary-card h3 {
+
+    color: #f8fafc;
+}
+
+
+/* Dark inputs */
+
+body.dark-mode input,
+body.dark-mode select {
+
+    background: #111827;
+
+    color: #f8fafc;
+
+    border-color: #374151;
+}
+
+
+body.dark-mode input::placeholder {
+
+    color: #6b7280;
+}
+
+
+body.dark-mode input:focus,
+body.dark-mode select:focus {
+
+    background: #111827;
+
+    border-color:
+        var(--primary);
+}
+
+
+/* ==================================================
+   DARK MODE TYPE BUTTONS
+================================================== */
+
+
+/* Default unselected buttons */
+
+body.dark-mode .type-btn {
+
+    background: #111827;
+
+    color: #d1d5db;
+
+    border:
+        1px solid #475569;
+}
+
+
+/* Selected INCOME button */
+
+body.dark-mode .income-type.active {
+
+    background: #064e3b;
+
+    color: #34d399;
+
+    border:
+        2px solid #10b981;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(16, 185, 129, 0.15);
+
+    font-weight: 700;
+}
+
+
+/* Selected EXPENSE button */
+
+body.dark-mode .expense-type.active {
+
+    background: #7f1d1d;
+
+    color: #fca5a5;
+
+    border:
+        2px solid #ef4444;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(239, 68, 68, 0.15);
+
+    font-weight: 700;
+}
+
+
+/* Hover Income */
+
+body.dark-mode .income-type:hover {
+
+    background: #064e3b;
+
+    color: #6ee7b7;
+}
+
+
+/* Hover Expense */
+
+body.dark-mode .expense-type:hover {
+
+    background: #7f1d1d;
+
+    color: #fecaca;
+}
+
+
+/* ==================================================
+   DARK MODE TRANSACTION ITEMS
+================================================== */
+
+body.dark-mode .transaction-item {
+
+    background: #172033;
+
+    border-color: #334155;
+}
+
+
+body.dark-mode .transaction-item:hover {
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+body.dark-mode .transaction-info h4 {
+
+    color: #f8fafc;
+}
+
+
+/* ==================================================
+   DARK MODE CANCEL BUTTON
+================================================== */
+
+body.dark-mode .cancel-btn {
+
+    background: #1e293b;
+
+    color: #d1d5db;
+
+    border-color: #475569;
+}
+
+
+body.dark-mode .cancel-btn:hover {
+
+    background: #334155;
+}
+
+
+/* ==================================================
+   DARK MODE CLEAR BUTTON
+================================================== */
+
+body.dark-mode .clear-btn {
+
+    background: #451a1a;
+
+    color: #fca5a5;
+}
+
+
+/* ==================================================
+   DARK MODE EMPTY STATE
+================================================== */
+
+body.dark-mode .empty-state h3 {
+
+    color: #f8fafc;
+}
+
+
+/* ==================================================
+   DARK MODE FOOTER
+================================================== */
+
+body.dark-mode .footer {
+
+    border-color: #334155;
+}
+
+
+/* ==================================================
+   DARK MODE SCROLLBAR
+================================================== */
+
+body.dark-mode ::-webkit-scrollbar-track {
+
+    background: #111827;
+}
+
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+
+    background: #475569;
+}
+
+
+/* ==================================================
+   SMOOTH THEME TRANSITION
+================================================== */
+
+body,
+.form-card,
+.history-card,
+.summary-card,
+.transaction-item,
+input,
+select,
+.type-btn,
+.cancel-btn {
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+
+/* ================= TABLET ================= */
 
 @media (max-width: 950px) {
 
     .content-grid {
 
         grid-template-columns: 1fr;
-
     }
 
 
@@ -1117,7 +1588,7 @@ input::placeholder {
 }
 
 
-/* Small Tablet */
+/* ================= SMALL TABLET ================= */
 
 @media (max-width: 700px) {
 
@@ -1161,7 +1632,6 @@ input::placeholder {
 
         grid-template-columns:
             auto 1fr auto;
-
     }
 
 
@@ -1183,19 +1653,26 @@ input::placeholder {
 }
 
 
-/* Mobile */
+/* ================= MOBILE ================= */
 
 @media (max-width: 500px) {
 
     .header {
 
-        padding: 17px 15px;
+        padding:
+            17px 15px;
     }
 
 
     .container {
 
         width: 94%;
+    }
+
+
+    .brand {
+
+        gap: 10px;
     }
 
 
@@ -1220,9 +1697,19 @@ input::placeholder {
     }
 
 
+    .theme-toggle {
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+
     .welcome-section {
 
-        padding: 28px 0 20px;
+        padding:
+            28px 0 20px;
     }
 
 
@@ -1280,7 +1767,8 @@ input::placeholder {
 
         font-size: 10px;
 
-        padding: 8px 10px;
+        padding:
+            8px 10px;
     }
 
 
@@ -1346,7 +1834,7 @@ input::placeholder {
 }
 
 
-/* Extra Small Mobile */
+/* ================= EXTRA SMALL MOBILE ================= */
 
 @media (max-width: 360px) {
 
@@ -1366,7 +1854,6 @@ input::placeholder {
 
         grid-template-columns:
             auto 1fr;
-
     }
 
 
@@ -1383,283 +1870,6 @@ input::placeholder {
     .transaction-amount {
 
         grid-column: 2;
-    }
-
-}
-
-/* ==================================================
-   DARK MODE
-================================================== */
-
-body.dark-mode {
-
-    --dark: #f8fafc;
-    --text: #d1d5db;
-    --muted: #9ca3af;
-
-    --white: #1e293b;
-    --background: #0f172a;
-
-    --border: #334155;
-
-    --primary-light: #252b5c;
-
-    --income-light: #063b2b;
-
-    --expense-light: #451a1a;
-
-    --shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Dark mode body */
-
-body.dark-mode {
-
-    background: #0f172a;
-
-    color: #d1d5db;
-}
-
-
-/* Header */
-
-body.dark-mode .header {
-
-    background:
-        linear-gradient(
-            135deg,
-            #1e1b4b,
-            #312e81,
-            #3730a3
-        );
-}
-
-
-/* Cards */
-
-body.dark-mode .form-card,
-body.dark-mode .history-card,
-body.dark-mode .summary-card {
-
-    background: #1e293b;
-
-    border-color: #334155;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Main headings */
-
-body.dark-mode .welcome-section h2,
-body.dark-mode .section-heading h2,
-body.dark-mode .history-header h2 {
-
-    color: #f8fafc;
-}
-
-
-/* Summary card amount */
-
-body.dark-mode .summary-card h3 {
-
-    color: #f8fafc;
-}
-
-
-/* Inputs */
-
-body.dark-mode input,
-body.dark-mode select {
-
-    background: #111827;
-
-    color: #f8fafc;
-
-    border-color: #374151;
-}
-
-
-body.dark-mode input::placeholder {
-
-    color: #6b7280;
-}
-
-
-body.dark-mode input:focus,
-body.dark-mode select:focus {
-
-    background: #111827;
-
-    border-color: var(--primary);
-}
-
-
-/* Transaction type buttons */
-
-body.dark-mode .type-btn {
-
-    background: #111827;
-
-    color: #d1d5db;
-
-    border-color: #374151;
-}
-
-
-/* Transaction items */
-
-body.dark-mode .transaction-item {
-
-    background: #172033;
-
-    border-color: #334155;
-}
-
-
-body.dark-mode .transaction-item:hover {
-
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Transaction title */
-
-body.dark-mode .transaction-info h4 {
-
-    color: #f8fafc;
-}
-
-
-/* Cancel button */
-
-body.dark-mode .cancel-btn {
-
-    background: #1e293b;
-
-    color: #d1d5db;
-
-    border-color: #475569;
-}
-
-
-body.dark-mode .cancel-btn:hover {
-
-    background: #334155;
-}
-
-
-/* Clear button */
-
-body.dark-mode .clear-btn {
-
-    background: #451a1a;
-}
-
-
-/* Empty state */
-
-body.dark-mode .empty-state h3 {
-
-    color: #f8fafc;
-}
-
-
-/* Footer */
-
-body.dark-mode .footer {
-
-    border-color: #334155;
-}
-
-
-/* ================= THEME BUTTON ================= */
-
-.theme-toggle {
-
-    width: 45px;
-
-    height: 45px;
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    cursor: pointer;
-
-    font-size: 20px;
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-}
-
-
-.theme-toggle:hover {
-
-    background: rgba(255, 255, 255, 0.25);
-
-    transform: rotate(15deg) scale(1.05);
-}
-
-
-/* Header layout */
-
-.header-content {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-}
-
-
-/* Smooth theme transition */
-
-body,
-.form-card,
-.history-card,
-.summary-card,
-.transaction-item,
-input,
-select,
-.type-btn,
-.cancel-btn {
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* Mobile */
-
-@media (max-width: 500px) {
-
-    .theme-toggle {
-
-        width: 40px;
-
-        height: 40px;
-
-        font-size: 17px;
     }
 
 }
