@@ -23,12 +23,7 @@ A simple and responsive **Expense Tracker** web application to manage income and
 
 ## 🚀 Live Demo
 
-🔗 **Live Demo**
-*Add your deployed Expense Tracker link here*
-
-## 💻 Source Code
-
-https://github.com/monishas2k3/expense-tracker
+https://monishas2k3.github.io/expense-tracker
 
 ---
 
